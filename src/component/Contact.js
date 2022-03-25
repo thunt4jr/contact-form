@@ -46,11 +46,13 @@ export default function Contact() {
           <Form.Label>Message</Form.Label>
           <Form.Control as={"textarea"} id="message" rows={3} />
         </Form.Group>
-        <ReCAPTCHA
-          style={{ display: "inline-block", textAlign: "center" }}
-          sitekey="6LdRrQcbAAAAAArjTpKS8jmEcmjTgtd8gKd6upxf"
-          onChange={onChange}
-        />
+        <div className="text-center">
+          <ReCAPTCHA
+            className="d-inline-block"
+            sitekey="6LdRrQcbAAAAAArjTpKS8jmEcmjTgtd8gKd6upxf"
+            onChange={onChange}
+          />
+        </div>
         <div className="text-center">
           <Button className="m-1" variant="primary" type="submit">
             {status}

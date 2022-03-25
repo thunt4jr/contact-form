@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const [status, setStatus] = useState("Submit");
@@ -24,6 +25,9 @@ export default function Contact() {
     alert(result.status);
   };
 
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
   return (
     <div className="p-4">
       <Form onSubmit={handleSubmit}>
@@ -42,6 +46,11 @@ export default function Contact() {
           <Form.Label>Message</Form.Label>
           <Form.Control as={"textarea"} id="message" rows={3} />
         </Form.Group>
+        <ReCAPTCHA
+          style={{ display: "inline-block", textAlign: "center" }}
+          sitekey="6LdRrQcbAAAAAArjTpKS8jmEcmjTgtd8gKd6upxf"
+          onChange={onChange}
+        />
         <div className="text-center">
           <Button className="m-1" variant="primary" type="submit">
             {status}

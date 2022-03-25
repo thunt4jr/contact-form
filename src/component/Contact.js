@@ -28,6 +28,7 @@ export default function Contact() {
   function onChange(value) {
     console.log("Captcha value:", value);
   }
+
   const [disableSubmit, setDisableSubmit] = useState(true);
   return (
     <div className="p-4">
@@ -59,7 +60,7 @@ export default function Contact() {
         </Form.Group>
         <div className="text-center">
           <ReCAPTCHA
-            className="d-inline-block"
+            className="d-inline-block mb-2"
             sitekey="6Lcthg4fAAAAAMLTYkI2Rt9uDKN2PW6xS2xU0I9j"
             onChange={useCallback(() => setDisableSubmit(false))}
           />

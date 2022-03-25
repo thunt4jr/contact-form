@@ -11,7 +11,7 @@ app.use("/", router);
 app.listen(5000, () => console.log("Server is running"));
 
 const contactEmail = nodemailer.createTransport({
-  host: "mail.terryhunt.dev",
+  host: process.env.LINK,
   port: 465,
   secure: true,
   auth: {
